@@ -205,6 +205,11 @@ public class Row extends JPanel {
 	
 	private void loseGame() {
 
+		P0605.btnres1.setBackground(P0605.resultColors[0]);
+		P0605.btnres2.setBackground(P0605.resultColors[1]);
+		P0605.btnres3.setBackground(P0605.resultColors[2]);
+		P0605.btnres4.setBackground(P0605.resultColors[3]);
+		
 		JOptionPane.showMessageDialog(this, "Bravo! Vous avez perdu.");
 		SwingUtilities.getWindowAncestor(this).setVisible(false);
 
@@ -212,6 +217,7 @@ public class Row extends JPanel {
 		newGame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		newGame.setVisible(true);
 		System.out.println("PERDU !!!");
+		
 	}
 
 	/**

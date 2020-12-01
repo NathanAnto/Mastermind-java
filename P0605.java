@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.*;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -17,6 +18,8 @@ import javax.swing.JPanel;
 public class P0605 extends JFrame {
 	public static Color[] buttonColors = { Color.green, Color.orange, Color.yellow, Color.red, Color.gray, Color.cyan};
 	public static Color[] resultColors;
+	
+	public static JButton btnres1, btnres2, btnres3, btnres4;
 
 	JPanel pnlMain;
 	JPanel pnlRows;
@@ -52,6 +55,11 @@ public class P0605 extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(400,800);
 		
+		btnres1 = new JButton();
+		btnres2 = new JButton();
+		btnres3 = new JButton();
+		btnres4 = new JButton();
+		
 		pnlMain = new JPanel();
 		pnlRows = new JPanel();
 		pnlTop = new JPanel();
@@ -73,8 +81,17 @@ public class P0605 extends JFrame {
 		
 		pnlOptions.setPreferredSize(
 			new Dimension(this.getWidth()*2, this.getHeight())
-		);
+		);		
+
+		btnres1.setPreferredSize(new Dimension(50, 50));
+		btnres2.setPreferredSize(new Dimension(50, 50));
+		btnres3.setPreferredSize(new Dimension(50, 50));
+		btnres4.setPreferredSize(new Dimension(50, 50));
 		
+		btnres1.setEnabled(false);
+		btnres2.setEnabled(false);
+		btnres3.setEnabled(false);
+		btnres4.setEnabled(false);
 		createColorResult();
 		
 		for(int i = 0; i < 4; i++) {
@@ -89,6 +106,10 @@ public class P0605 extends JFrame {
 				pnlRows.add(new Row());
 			}
 		}
+		pnlBottom.add(btnres1);
+		pnlBottom.add(btnres2);
+		pnlBottom.add(btnres3);
+		pnlBottom.add(btnres4);
 		
 		pnlMain.add(BorderLayout.CENTER, pnlRows);
 		pnlMain.add(BorderLayout.NORTH, pnlTop);
